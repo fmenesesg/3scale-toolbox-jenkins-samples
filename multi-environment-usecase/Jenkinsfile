@@ -18,8 +18,7 @@ node() {
         openapi: [filename: "multi-environment-usecase/swagger.yaml"],
         environment: [ baseSystemName: "multi_environment_usecase",
                        publicBasePath: "/api/",
-                       environmentName: "dev",
-                       privateBaseUrl: params.PRIVATE_BASE_URL ],
+                       environmentName: "dev" ],
         toolbox: [ openshiftProject: params.NAMESPACE,
                    destination: params.TARGET_INSTANCE,
                    image: "quay.io/redhat/3scale-toolbox:master", // TODO: remove me once the final image is released
