@@ -18,7 +18,8 @@ node() {
         openapi: [filename: "multi-environment-usecase/swagger.yaml"],
         environment: [ baseSystemName: "multi_environment_usecase",
                        publicBasePath: "/api/",
-                       environmentName: "dev" ],
+                       environmentName: "dev",
+                       privateBaseUrl: params.PRIVATE_BASE_URL ],
         toolbox: [ openshiftProject: params.NAMESPACE,
                    destination: params.TARGET_INSTANCE,
                    image: "quay.io/redhat/3scale-toolbox:master", // TODO: remove me once the final image is released
@@ -66,7 +67,8 @@ node() {
         openapi: [filename: "multi-environment-usecase/swagger.yaml"],
         environment: [ baseSystemName: "multi_environment_usecase",
                        publicBasePath: "/api/",
-                       environmentName: "test"],
+                       environmentName: "test",
+                       privateBaseUrl: params.PRIVATE_BASE_URL],
         toolbox: [ openshiftProject: params.NAMESPACE,
                    destination: params.TARGET_INSTANCE,
                    image: "quay.io/redhat/3scale-toolbox:master", // TODO: remove me once the final image is released
@@ -114,7 +116,8 @@ node() {
         openapi: [filename: "multi-environment-usecase/swagger.yaml"],
         environment: [ baseSystemName: "multi_environment_usecase",
                        publicBasePath: "/api/",
-                       environmentName: "prod"],
+                       environmentName: "prod",
+                       privateBaseUrl: params.PRIVATE_BASE_URL],
         toolbox: [ openshiftProject: params.NAMESPACE,
                    destination: params.TARGET_INSTANCE,
                    image: "quay.io/redhat/3scale-toolbox:master", // TODO: remove me once the final image is released
